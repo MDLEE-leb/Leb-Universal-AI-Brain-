@@ -1,0 +1,7 @@
+{
+  "name": "Leb Universal AI Brain",
+  "description": "A versatile AI assistant featuring specialized 'brains' for chat, code generation, vision analysis, and text-to-speech, designed to provide a comprehensive and intuitive AI experience.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
