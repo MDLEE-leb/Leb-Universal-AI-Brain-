@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
-import { BrainIcon } from './icons';
+import { useAuth } from '../hooks/useAuth.js';
+import { BrainIcon } from './icons.js';
 
 interface PasswordRecoveryPanelProps {
   onSwitchToLogin: () => void;

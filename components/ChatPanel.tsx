@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { generateText, generateSpeech } from '../services/geminiService';
-import { ChatMessage, MessageAuthor } from '../types';
-import { BrainIcon, SendIcon, TrashIcon, CopyIcon, CheckIcon, PaperClipIcon, XCircleIcon, AudioIcon, StopCircleIcon } from './icons';
-import SpeechToTextButton from './SpeechToTextButton';
+import { generateText, generateSpeech } from '../services/geminiService.js';
+import { ChatMessage, MessageAuthor } from '../types.js';
+import { BrainIcon, SendIcon, TrashIcon, CopyIcon, CheckIcon, PaperClipIcon, XCircleIcon, AudioIcon, StopCircleIcon } from './icons.js';
+import SpeechToTextButton from './SpeechToTextButton.js';
 
 interface ChatPanelProps {
   modelName: string;

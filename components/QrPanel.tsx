@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import QRCode from 'qrcode';
-import { QrCodeIcon } from './icons';
+import { QrCodeIcon } from './icons.js';
 
 type ErrorCorrectionLevel = 'L' | 'M' | 'Q' | 'H';
 

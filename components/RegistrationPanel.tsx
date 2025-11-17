@@ -1,7 +1,7 @@
 
 import React, { useState } from 'react';
-import { useAuth } from '../hooks/useAuth';
-import { BrainIcon, EyeIcon, EyeSlashIcon } from './icons';
+import { useAuth } from '../hooks/useAuth.js';
+import { BrainIcon, EyeIcon, EyeSlashIcon } from './icons.js';
 
 interface RegistrationPanelProps {
   onSwitchToLogin: (message: string) => void;

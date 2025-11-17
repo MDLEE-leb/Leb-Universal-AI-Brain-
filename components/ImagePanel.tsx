@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { generateImages } from '../services/geminiService';
-import { ImageIcon } from './icons';
-import SpeechToTextButton from './SpeechToTextButton';
+import { generateImages } from '../services/geminiService.js';
+import { ImageIcon } from './icons.js';
+import SpeechToTextButton from './SpeechToTextButton.js';
 
 const ImagePanel: React.FC = () => {
   const [prompt, setPrompt] = useState('');

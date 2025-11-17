@@ -1,25 +1,25 @@
 
 // Fix: Corrected import for React hooks.
 import React, { useState, useEffect } from 'react';
-import Sidebar from './components/Sidebar';
-import Header from './components/Header';
-import ChatPanel from './components/ChatPanel';
-import VisionPanel from './components/VisionPanel';
-import AudioPanel from './components/AudioPanel';
-import ImagePanel from './components/ImagePanel';
-import EditPanel from './components/EditPanel';
-import DashboardPanel from './components/DashboardPanel';
-import WebPanel from './components/WebPanel';
-import TaskPanel from './components/TaskPanel';
-import QrPanel from './components/QrPanel';
-import { BrainType } from './types';
-import { BrainIcon } from './components/icons';
+import Sidebar from './components/Sidebar.js';
+import Header from './components/Header.js';
+import ChatPanel from './components/ChatPanel.js';
+import VisionPanel from './components/VisionPanel.js';
+import AudioPanel from './components/AudioPanel.js';
+import ImagePanel from './components/ImagePanel.js';
+import EditPanel from './components/EditPanel.js';
+import DashboardPanel from './components/DashboardPanel.js';
+import WebPanel from './components/WebPanel.js';
+import TaskPanel from './components/TaskPanel.js';
+import QrPanel from './components/QrPanel.js';
+import { BrainType } from './types.js';
+import { BrainIcon } from './components/icons.js';
 // Fix: Corrected import for useAuth hook.
-import { AuthProvider } from './contexts/AuthContext';
-import { useAuth } from './hooks/useAuth';
-import LoginPanel from './components/LoginPanel';
-import PasswordRecoveryPanel from './components/PasswordRecoveryPanel';
-import RegistrationPanel from './components/RegistrationPanel';
+import { AuthProvider } from './contexts/AuthContext.js';
+import { useAuth } from './hooks/useAuth.js';
+import LoginPanel from './components/LoginPanel.js';
+import PasswordRecoveryPanel from './components/PasswordRecoveryPanel.js';
+import RegistrationPanel from './components/RegistrationPanel.js';
 
 const MainAppLayout: React.FC = () => {
   const [activeBrain, setActiveBrain] = useState<BrainType>(BrainType.DASHBOARD);

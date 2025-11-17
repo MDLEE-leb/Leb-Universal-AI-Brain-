@@ -1,6 +1,6 @@
 
 import React from 'react';
-import { BrainType } from '../types';
+import { BrainType } from '../types.js';
 import {
   ChatIcon,
   CodeIcon,
@@ -14,7 +14,7 @@ import {
   ZedaIcon,
   LameriaIcon,
   ExternalLinkIcon,
-} from './icons';
+} from './icons.js';
 
 interface DashboardPanelProps {
   setActiveBrain: (brain: BrainType) => void;

@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrainType } from '../types';
-import { BrainIcon, ChatIcon, CodeIcon, VisionIcon, AudioIcon, ImageIcon, EditIcon, DashboardIcon, HtmlIcon, TaskIcon, QrCodeIcon } from './icons';
+import { BrainType } from '../types.js';
+import { BrainIcon, ChatIcon, CodeIcon, VisionIcon, AudioIcon, ImageIcon, EditIcon, DashboardIcon, HtmlIcon, TaskIcon, QrCodeIcon } from './icons.js';
 
 interface SidebarProps {
   activeBrain: BrainType;
