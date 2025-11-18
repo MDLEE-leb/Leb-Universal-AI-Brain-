@@ -1,4 +1,3 @@
-
 export enum BrainType {
   DASHBOARD = 'Dashboard',
   CHAT = 'Chat',
@@ -8,6 +7,8 @@ export enum BrainType {
   AUDIO = 'Audio',
   IMAGE = 'Image',
   EDIT = 'Edit',
+  VIDEO = 'Video',
+  LIVE = 'Live',
   TASK = 'Tasks',
   QR = 'QR Code',
 }

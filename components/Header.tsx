@@ -1,7 +1,8 @@
+
 import React from 'react';
-import { MenuIcon, ChevronDownIcon, UserCircleIcon } from './icons.js';
-import { BrainType } from '../types.js';
-import { useAuth } from '../hooks/useAuth.js';
+import { MenuIcon, ChevronDownIcon, UserCircleIcon } from './icons.tsx';
+import { BrainType } from '../types.ts';
+import { useAuth } from '../hooks/useAuth.ts';
 
 interface HeaderProps {
   toggleSidebar: () => void;

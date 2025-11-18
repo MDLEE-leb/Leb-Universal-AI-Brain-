@@ -1,5 +1,6 @@
+
 import { GoogleGenAI, Modality } from "@google/genai";
-import { ChatMessage, MessageAuthor } from '../types.js';
+import { ChatMessage, MessageAuthor } from '../types.ts';
 
 if (!process.env.API_KEY) {
     throw new Error("API_KEY environment variable not set");

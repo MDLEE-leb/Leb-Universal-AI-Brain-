@@ -1,7 +1,6 @@
-
 import React, { useState, useEffect } from 'react';
-import { useAuth } from '../hooks/useAuth.js';
-import { BrainIcon, EyeIcon, EyeSlashIcon } from './icons.js';
+import { useAuth } from '../hooks/useAuth.ts';
+import { BrainIcon, EyeIcon, EyeSlashIcon } from './icons.tsx';
 
 interface LoginPanelProps {
   onSwitchToRecover: () => void;
@@ -18,6 +17,7 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ onSwitchToRecover, onSwitchToRe
   const [successMessage, setSuccessMessage] = useState(message || '');
   const [isLoading, setIsLoading] = useState(false);
   const { login } = useAuth();
+  const appTitle = 'Leb Universal AI Brain';
 
   useEffect(() => {
     if (successMessage) {
@@ -52,13 +52,13 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ onSwitchToRecover, onSwitchToRe
         <div className="text-center">
             <BrainIcon className="w-16 h-16 mx-auto text-indigo-400" />
             <h1 className="mt-4 text-3xl font-bold tracking-tight text-white">
-                Leb Universal AI Brain
+                {appTitle}
             </h1>
             <p className="mt-2 text-sm text-gray-400">Sign in to continue</p>
             <div className="mt-4 text-xs text-center text-amber-300 bg-amber-900/50 p-3 rounded-md border border-amber-700/50">
               <p><span className="font-bold">Demo Credentials:</span></p>
               <p>Email: <span className="font-mono">user@example.com</span></p>
-              <p>Password: <span className="font-mono">password123</span></p>
+              <p>Password: <span className="font-mono">Pass@12</span></p>
             </div>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -74,7 +74,7 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ onSwitchToRecover, onSwitchToRe
                   type="email"
                   autoComplete="email"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-600 bg-gray-700 placeholder-gray-400 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-600 bg-gray-700 placeholder-gray-300 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                   placeholder="you@example.com"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
@@ -93,7 +93,7 @@ const LoginPanel: React.FC<LoginPanelProps> = ({ onSwitchToRecover, onSwitchToRe
                   type={showPassword ? 'text' : 'password'}
                   autoComplete="current-password"
                   required
-                  className="appearance-none block w-full px-3 py-2 border border-gray-600 bg-gray-700 placeholder-gray-400 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm pr-10"
+                  className="appearance-none block w-full px-3 py-2 border border-gray-600 bg-gray-700 placeholder-gray-300 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm pr-10"
                   placeholder="••••••••"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}

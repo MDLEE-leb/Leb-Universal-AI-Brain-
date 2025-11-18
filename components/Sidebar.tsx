@@ -1,6 +1,6 @@
 import React from 'react';
-import { BrainType } from '../types.js';
-import { BrainIcon, ChatIcon, CodeIcon, VisionIcon, AudioIcon, ImageIcon, EditIcon, DashboardIcon, HtmlIcon, TaskIcon, QrCodeIcon } from './icons.js';
+import { BrainType } from '../types.ts';
+import { BrainIcon, ChatIcon, CodeIcon, VisionIcon, AudioIcon, ImageIcon, EditIcon, DashboardIcon, HtmlIcon, TaskIcon, QrCodeIcon, VideoIcon, LiveIcon } from './icons.tsx';
 
 interface SidebarProps {
   activeBrain: BrainType;
@@ -9,6 +9,7 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ activeBrain, setActiveBrain, isSidebarOpen }) => {
+  const appTitle = 'Leb Universal AI Brain';
   const navItems = [
     { type: BrainType.DASHBOARD, Icon: DashboardIcon },
     { type: BrainType.CHAT, Icon: ChatIcon },
@@ -16,8 +17,10 @@ const Sidebar: React.FC<SidebarProps> = ({ activeBrain, setActiveBrain, isSideba
     { type: BrainType.HTML, Icon: HtmlIcon },
     { type: BrainType.VISION, Icon: VisionIcon },
     { type: BrainType.AUDIO, Icon: AudioIcon },
+    { type: BrainType.LIVE, Icon: LiveIcon },
     { type: BrainType.IMAGE, Icon: ImageIcon },
     { type: BrainType.EDIT, Icon: EditIcon },
+    { type: BrainType.VIDEO, Icon: VideoIcon },
     { type: BrainType.TASK, Icon: TaskIcon },
     { type: BrainType.QR, Icon: QrCodeIcon },
   ];
@@ -26,7 +29,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeBrain, setActiveBrain, isSideba
     <div className={`bg-gray-900 border-r border-gray-700/50 flex flex-col p-4 transition-all duration-300 ease-in-out ${isSidebarOpen ? 'w-64' : 'w-20'}`}>
       <div className="flex items-center mb-8">
         <BrainIcon className="w-10 h-10 text-indigo-400 flex-shrink-0" />
-        {isSidebarOpen && <h1 className="text-xl font-bold ml-3 whitespace-nowrap">Leb Universal AI Brain</h1>}
+        {isSidebarOpen && <h1 className="text-xl font-bold ml-3 whitespace-nowrap">{appTitle}</h1>}
       </div>
       <nav className="flex flex-col space-y-2">
         {navItems.map(({ type, Icon }) => (
@@ -57,7 +60,7 @@ const Sidebar: React.FC<SidebarProps> = ({ activeBrain, setActiveBrain, isSideba
             <p>123 Innovation Drive, Centurion</p>
             <p>Gauteng, South Africa</p>
           </div>
-          <p className="pt-2 text-gray-600">&copy; 2024 Leb Universal AI Brain</p>
+          <p className="pt-2 text-gray-600">&copy; 2024 {appTitle}</p>
         </div>
       )}
     </div>

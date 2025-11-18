@@ -1,6 +1,7 @@
+
 import React, { useState, useEffect, useMemo } from 'react';
-import { Task, TaskPriority } from '../types.js';
-import { TaskIcon, TrashIcon, SortAscendingIcon, SortDescendingIcon } from './icons.js';
+import { Task, TaskPriority } from '../types.ts';
+import { TaskIcon, TrashIcon, SortAscendingIcon, SortDescendingIcon } from './icons.tsx';
 
 const TASKS_STORAGE_KEY = 'aiBrainTasks';
 

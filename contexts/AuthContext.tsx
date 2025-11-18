@@ -1,3 +1,4 @@
+
 import React, { createContext, useState, useEffect, ReactNode } from 'react';
 
 interface User {
@@ -29,7 +30,7 @@ const getInitialUsers = (): User[] => {
         localStorage.removeItem(USERS_STORAGE_KEY);
     }
     // Default user if storage is empty or corrupt
-    return [{ email: 'user@example.com', password: 'password123' }];
+    return [{ email: 'user@example.com', password: 'Pass@12' }];
 };
 
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { MicrophoneIcon } from './icons.js';
+import { MicrophoneIcon } from './icons.tsx';
 
 // Fix: Add type definitions for the Web Speech API to resolve "Cannot find name 'SpeechRecognition'".
 // These interfaces are based on the standard Web Speech API for browser compatibility.

@@ -1,7 +1,8 @@
 
+
 import React, { useState } from 'react';
-import { useAuth } from '../hooks/useAuth.js';
-import { BrainIcon } from './icons.js';
+import { useAuth } from '../hooks/useAuth.ts';
+import { BrainIcon } from './icons.tsx';
 
 interface PasswordRecoveryPanelProps {
   onSwitchToLogin: () => void;
@@ -55,7 +56,7 @@ const PasswordRecoveryPanel: React.FC<PasswordRecoveryPanelProps> = ({ onSwitchT
                         type="email"
                         autoComplete="email"
                         required
-                        className="appearance-none block w-full px-3 py-2 border border-gray-600 bg-gray-700 placeholder-gray-400 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                        className="appearance-none block w-full px-3 py-2 border border-gray-600 bg-gray-700 placeholder-gray-300 text-white rounded-md focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
                         placeholder="you@example.com"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}

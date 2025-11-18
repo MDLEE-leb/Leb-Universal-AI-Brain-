@@ -1,25 +1,26 @@
-
 // Fix: Corrected import for React hooks.
 import React, { useState, useEffect } from 'react';
-import Sidebar from './components/Sidebar.js';
-import Header from './components/Header.js';
-import ChatPanel from './components/ChatPanel.js';
-import VisionPanel from './components/VisionPanel.js';
-import AudioPanel from './components/AudioPanel.js';
-import ImagePanel from './components/ImagePanel.js';
-import EditPanel from './components/EditPanel.js';
-import DashboardPanel from './components/DashboardPanel.js';
-import WebPanel from './components/WebPanel.js';
-import TaskPanel from './components/TaskPanel.js';
-import QrPanel from './components/QrPanel.js';
-import { BrainType } from './types.js';
-import { BrainIcon } from './components/icons.js';
+import Sidebar from './components/Sidebar.tsx';
+import Header from './components/Header.tsx';
+import ChatPanel from './components/ChatPanel.tsx';
+import VisionPanel from './components/VisionPanel.tsx';
+import AudioPanel from './components/AudioPanel.tsx';
+import ImagePanel from './components/ImagePanel.tsx';
+import EditPanel from './components/EditPanel.tsx';
+import VideoPanel from './components/VideoPanel.tsx';
+import DashboardPanel from './components/DashboardPanel.tsx';
+import WebPanel from './components/WebPanel.tsx';
+import TaskPanel from './components/TaskPanel.tsx';
+import QrPanel from './components/QrPanel.tsx';
+import LivePanel from './components/LivePanel.tsx';
+import { BrainType } from './types.ts';
+import { BrainIcon } from './components/icons.tsx';
 // Fix: Corrected import for useAuth hook.
-import { AuthProvider } from './contexts/AuthContext.js';
-import { useAuth } from './hooks/useAuth.js';
-import LoginPanel from './components/LoginPanel.js';
-import PasswordRecoveryPanel from './components/PasswordRecoveryPanel.js';
-import RegistrationPanel from './components/RegistrationPanel.js';
+import { AuthProvider } from './contexts/AuthContext.tsx';
+import { useAuth } from './hooks/useAuth.ts';
+import LoginPanel from './components/LoginPanel.tsx';
+import PasswordRecoveryPanel from './components/PasswordRecoveryPanel.tsx';
+import RegistrationPanel from './components/RegistrationPanel.tsx';
 
 const MainAppLayout: React.FC = () => {
   const [activeBrain, setActiveBrain] = useState<BrainType>(BrainType.DASHBOARD);
@@ -70,6 +71,8 @@ const MainAppLayout: React.FC = () => {
     [BrainType.AUDIO]: <AudioPanel />,
     [BrainType.IMAGE]: <ImagePanel />,
     [BrainType.EDIT]: <EditPanel />,
+    [BrainType.VIDEO]: <VideoPanel />,
+    [BrainType.LIVE]: <LivePanel />,
     [BrainType.TASK]: <TaskPanel />,
     [BrainType.QR]: <QrPanel />,
   };
@@ -131,6 +134,10 @@ const AuthGate: React.FC = () => {
 };
 
 const App: React.FC = () => {
+  useEffect(() => {
+    document.title = 'Leb Universal AI Brain';
+  }, []);
+
   return (
     <AuthProvider>
       <AuthGate />

@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 export const BrainIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -66,6 +65,12 @@ export const EditIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
   <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
      <path strokeLinecap="round" strokeLinejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.311a6.01 6.01 0 00-3.75 0M14.25 18v-5.25m0 0a6.01 6.01 0 01-1.5-.189m1.5.189a6.01 6.01 0 001.5-.189m-3.75 7.478a12.06 12.06 0 004.5 0m-3.75 2.311a6.01 6.01 0 013.75 0M9.75 12.75c0 .414-.168.786-.438 1.057a1.828 1.828 0 01-1.06 1.06c-.27.27-.643.438-1.058.438h-.375a3.375 3.375 0 01-3.375-3.375V9.375c0-1.082.72-2.023 1.74-2.33a4.5 4.5 0 014.26 0c1.02.307 1.74 1.248 1.74 2.33v3.375c0 .414-.168.786-.438 1.057a1.828 1.828 0 01-1.06 1.06c-.27.27-.643.438-1.058.438h-.375" />
   </svg>
+);
+
+export const VideoIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+      <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 10.5l4.72-4.72a.75.75 0 011.28.53v11.38a.75.75 0 01-1.28.53l-4.72-4.72M4.5 18.75h9a2.25 2.25 0 002.25-2.25v-9A2.25 2.25 0 0013.5 5.25h-9A2.25 2.25 0 002.25 7.5v9A2.25 2.25 0 004.5 18.75z" />
+    </svg>
 );
 
 export const MenuIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
@@ -180,5 +185,12 @@ export const SortAscendingIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props
 export const SortDescendingIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
       <path strokeLinecap="round" strokeLinejoin="round" d="M3 4.5h14.25M3 9h9.75M3 13.5h5.25m5.25 6.75l-3.75-3.75m0 0V3m0 12.75l3.75 3.75" />
+    </svg>
+);
+
+export const LiveIcon: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
+    <svg {...props} xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" d="M12 18.75a.75.75 0 01.75.75v.008a.75.75 0 01-1.5 0V19.5a.75.75 0 01.75-.75zM12 12.75a3 3 0 013-3V6a3 3 0 00-6 0v3.75a3 3 0 013 3z" />
+        <path strokeLinecap="round" strokeLinejoin="round" d="M19.115 5.636a9 9 0 010 12.728M16.463 8.288a5.25 5.25 0 010 7.424" />
     </svg>
 );

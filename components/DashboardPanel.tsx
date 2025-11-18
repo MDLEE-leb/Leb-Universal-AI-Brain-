@@ -1,6 +1,5 @@
-
 import React from 'react';
-import { BrainType } from '../types.js';
+import { BrainType } from '../types.ts';
 import {
   ChatIcon,
   CodeIcon,
@@ -11,16 +10,19 @@ import {
   HtmlIcon,
   TaskIcon,
   QrCodeIcon,
+  VideoIcon,
+  LiveIcon,
   ZedaIcon,
   LameriaIcon,
   ExternalLinkIcon,
-} from './icons.js';
+} from './icons.tsx';
 
 interface DashboardPanelProps {
   setActiveBrain: (brain: BrainType) => void;
 }
 
 const DashboardPanel: React.FC<DashboardPanelProps> = ({ setActiveBrain }) => {
+  const appTitle = 'Leb Universal AI Brain';
   const brains = [
     {
       type: BrainType.CHAT,
@@ -53,6 +55,12 @@ const DashboardPanel: React.FC<DashboardPanelProps> = ({ setActiveBrain }) => {
       color: 'text-rose-400',
     },
     {
+      type: BrainType.LIVE,
+      Icon: LiveIcon,
+      description: 'Have a real-time voice conversation with the AI and see a live transcript.',
+      color: 'text-red-400',
+    },
+    {
       type: BrainType.IMAGE,
       Icon: ImageIcon,
       description: 'Generate stunning, high-quality images from text prompts.',
@@ -63,6 +71,12 @@ const DashboardPanel: React.FC<DashboardPanelProps> = ({ setActiveBrain }) => {
       Icon: EditIcon,
       description: 'Edit existing images by providing simple text instructions.',
       color: 'text-indigo-400',
+    },
+    {
+      type: BrainType.VIDEO,
+      Icon: VideoIcon,
+      description: 'Generate short, high-quality videos from text prompts.',
+      color: 'text-pink-400',
     },
     {
       type: BrainType.TASK,
@@ -99,7 +113,7 @@ const DashboardPanel: React.FC<DashboardPanelProps> = ({ setActiveBrain }) => {
     <div className="bg-gray-800 h-full p-6 md:p-8 overflow-y-auto">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-white">Welcome to the Leb Universal AI Brain</h1>
+          <h1 className="text-4xl md:text-5xl font-bold text-white">Welcome to the {appTitle}</h1>
           <p className="mt-4 text-lg text-gray-400">Select a capability below to get started.</p>
         </div>
 

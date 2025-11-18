@@ -1,8 +1,9 @@
+
 import React, { useState } from 'react';
-import { generateSpeech } from '../services/geminiService.js';
-import { VoiceOption } from '../types.js';
-import { AudioIcon } from './icons.js';
-import SpeechToTextButton from './SpeechToTextButton.js';
+import { generateSpeech } from '../services/geminiService.ts';
+import { VoiceOption } from '../types.ts';
+import { AudioIcon } from './icons.tsx';
+import SpeechToTextButton from './SpeechToTextButton.tsx';
 
 const AudioPanel: React.FC = () => {
   const [text, setText] = useState('');

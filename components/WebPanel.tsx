@@ -1,7 +1,8 @@
+
 import React, { useState } from 'react';
-import { generateText } from '../services/geminiService.js';
-import { SendIcon, CodeIcon, VisionIcon } from './icons.js';
-import SpeechToTextButton from './SpeechToTextButton.js';
+import { generateText } from '../services/geminiService.ts';
+import { SendIcon, CodeIcon, VisionIcon } from './icons.tsx';
+import SpeechToTextButton from './SpeechToTextButton.tsx';
 
 const WebPanel: React.FC = () => {
   const [prompt, setPrompt] = useState('');

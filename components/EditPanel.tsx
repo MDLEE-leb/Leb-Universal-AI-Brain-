@@ -1,7 +1,8 @@
+
 import React, { useState, useRef, useEffect } from 'react';
-import { editImage } from '../services/geminiService.js';
-import { EditIcon } from './icons.js';
-import SpeechToTextButton from './SpeechToTextButton.js';
+import { editImage } from '../services/geminiService.ts';
+import { EditIcon } from './icons.tsx';
+import SpeechToTextButton from './SpeechToTextButton.tsx';
 
 const FILTERS: { [key: string]: string } = {
   none: 'None',

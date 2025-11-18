@@ -1,7 +1,8 @@
+
 import React, { useState, useRef, useEffect } from 'react';
-import { analyzeImage } from '../services/geminiService.js';
-import { VisionIcon } from './icons.js';
-import SpeechToTextButton from './SpeechToTextButton.js';
+import { analyzeImage } from '../services/geminiService.ts';
+import { VisionIcon } from './icons.tsx';
+import SpeechToTextButton from './SpeechToTextButton.tsx';
 
 const VisionPanel: React.FC = () => {
   const [images, setImages] = useState<File[]>([]);

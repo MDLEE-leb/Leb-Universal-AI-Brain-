@@ -1,8 +1,10 @@
+
+
 import React, { useState, useRef, useEffect } from 'react';
-import { generateText, generateSpeech } from '../services/geminiService.js';
-import { ChatMessage, MessageAuthor } from '../types.js';
-import { BrainIcon, SendIcon, TrashIcon, CopyIcon, CheckIcon, PaperClipIcon, XCircleIcon, AudioIcon, StopCircleIcon } from './icons.js';
-import SpeechToTextButton from './SpeechToTextButton.js';
+import { generateText, generateSpeech } from '../services/geminiService.ts';
+import { ChatMessage, MessageAuthor } from '../types.ts';
+import { BrainIcon, SendIcon, TrashIcon, CopyIcon, CheckIcon, PaperClipIcon, XCircleIcon, AudioIcon, StopCircleIcon } from './icons.tsx';
+import SpeechToTextButton from './SpeechToTextButton.tsx';
 
 interface ChatPanelProps {
   modelName: string;
@@ -355,7 +357,9 @@ const ChatPanel: React.FC<ChatPanelProps> = ({ modelName, setModelName, availabl
                     <SpeechToTextButton
                         onTranscript={(transcript) => {
                             if (setSystemInstruction) {
-                                setSystemInstruction(prev => `${prev ? prev + ' ' : ''}${transcript}`);
+                                // Fix: Use the `systemInstruction` prop for concatenation instead of a functional update
+                                // to match the prop type `(instruction: string) => void`.
+                                setSystemInstruction(`${systemInstruction ? systemInstruction + ' ' : ''}${transcript}`);
                             }
                         }}
                     />
