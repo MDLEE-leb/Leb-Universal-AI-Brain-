@@ -84,6 +84,13 @@ const ChatPanel: React.FC<ChatPanelProps> = ({ modelName, setModelName, availabl
   const audioContextRef = useRef<AudioContext | null>(null);
   const audioSourceRef = useRef<AudioBufferSourceNode | null>(null);
 
+  // Helper to provide users with cost/performance context for model selection.
+  const getModelDisplayName = (model: string) => {
+    if (model.includes('pro')) return `${model} (Slower, Higher Cost)`;
+    if (model.includes('flash')) return `${model} (Faster, Lower Cost)`;
+    return model;
+  };
+
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -378,7 +385,7 @@ const ChatPanel: React.FC<ChatPanelProps> = ({ modelName, setModelName, availabl
                 onChange={handleModelChange}
                 className="w-full bg-gray-700 rounded-md p-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
               >
-                {availableModels.map(m => <option key={m} value={m}>{m}</option>)}
+                {availableModels.map(m => <option key={m} value={m}>{getModelDisplayName(m)}</option>)}
               </select>
             </div>
           )}

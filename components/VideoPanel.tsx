@@ -79,6 +79,14 @@ const VideoPanel: React.FC = () => {
             return;
         }
 
+        const isConfirmed = window.confirm(
+            "Video generation is a resource-intensive and potentially costly process that can take several minutes. Are you sure you want to proceed?"
+        );
+
+        if (!isConfirmed) {
+            return; // User cancelled the operation
+        }
+
         if (videoUrlRef.current) {
             URL.revokeObjectURL(videoUrlRef.current);
             videoUrlRef.current = null;

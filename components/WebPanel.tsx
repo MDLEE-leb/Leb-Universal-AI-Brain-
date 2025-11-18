@@ -1,4 +1,5 @@
 
+
 import React, { useState } from 'react';
 import { generateText } from '../services/geminiService.ts';
 import { SendIcon, CodeIcon, VisionIcon } from './icons.tsx';
@@ -17,13 +18,19 @@ const WebPanel: React.FC = () => {
 <body class="bg-white flex items-center justify-center h-screen">
   <div class="text-center p-4">
     <h1 class="text-4xl font-bold text-gray-800">HTML Brain</h1>
-    <p class="text-gray-600 mt-2">Your live preview will appear here. Describe a webpage below to get started!</p>
+    <p class="text-gray-600 mt-2">Your live preview will appear here. Describe a webpage to get started!</p>
   </div>
 </body>
 </html>`);
   const [isLoading, setIsLoading] = useState(false);
-  const [modelName, setModelName] = useState('gemini-2.5-pro');
+  const [modelName, setModelName] = useState('gemini-2.5-flash');
   const availableModels = ['gemini-2.5-pro', 'gemini-2.5-flash'];
+  
+  const getModelDisplayName = (model: string) => {
+    if (model.includes('pro')) return `${model} (Slower, Higher Cost)`;
+    if (model.includes('flash')) return `${model} (Faster, Lower Cost)`;
+    return model;
+  };
   
   const systemInstruction = "You are an expert web developer specializing in Tailwind CSS. Generate a single, complete, and responsive HTML file. The HTML should include a <style> tag in the <head> for any custom CSS, but prefer Tailwind classes for all styling. The entire response must be a single HTML code block with the language identifier. For example: ```html\n<!DOCTYPE html>...</html>\n```";
 
@@ -71,7 +78,7 @@ const WebPanel: React.FC = () => {
                 disabled={isLoading}
                 className="bg-gray-700 rounded-md p-2 text-white focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
-                {availableModels.map(m => <option key={m} value={m}>{m}</option>)}
+                {availableModels.map(m => <option key={m} value={m}>{getModelDisplayName(m)}</option>)}
             </select>
         </div>
       </header>

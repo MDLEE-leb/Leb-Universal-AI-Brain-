@@ -29,11 +29,9 @@ const MainAppLayout: React.FC = () => {
   const [model, setModel] = useState<string>('gemini-2.5-flash');
 
   useEffect(() => {
-    if (activeBrain === BrainType.CHAT) {
-      setModel('gemini-2.5-flash');
-    } else if (activeBrain === BrainType.CODE || activeBrain === BrainType.HTML) {
-      setModel('gemini-2.5-pro');
-    }
+    // To help manage costs, default to the more cost-effective flash model
+    // when switching brains. The user can still select the pro model if needed.
+    setModel('gemini-2.5-flash');
   }, [activeBrain]);
 
   const chatModels = ['gemini-2.5-flash', 'gemini-2.5-pro'];
